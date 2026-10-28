@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff8f6" />
+    <meta name="description" content="A little birthday surprise, made with love." />
+    <title>A little birthday surprise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./content.js" defer></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="wordmark" href="#" aria-label="A little birthday surprise home"><span class="wordmark-heart">♡</span> just for you</a>
+        <div class="top-actions">
+          <button class="music-button" id="music-toggle" type="button" aria-label="Listen to Dil Na Jaaneya" aria-haspopup="dialog"><span aria-hidden="true">♫</span><span id="music-label">Dil Na Jaaneya</span></button>
+        </div>
+      </header>
+
+      <section class="progress-wrap" aria-label="Story progress">
+        <span class="progress-caption" id="progress-caption">A little story</span>
+        <div class="star-track" id="star-track" role="progressbar" aria-label="Story progress" aria-valuemin="1" aria-valuemax="6" aria-valuenow="1"></div>
+      </section>
+
+      <div id="scene" class="scene" aria-live="polite" aria-atomic="true"></div>
+      <footer class="site-note">made with <span aria-label="love">♡</span> and a little bit of magic</footer>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <dialog id="music-dialog" class="music-dialog" aria-labelledby="music-title">
+      <div class="music-dialog-head">
+        <div><span class="music-dialog-eyebrow">a song for you</span><h2 id="music-title">Dil Na Jaaneya</h2></div>
+        <button class="music-close" id="music-close" type="button" aria-label="Close music player">×</button>
+      </div>
+      <iframe id="spotify-player" title="Spotify player: Dil Na Jaaneya" width="100%" height="152" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <a class="music-open-link" href="https://open.spotify.com/track/41v8xHlKWch7OMqL6215cu" target="_blank" rel="noopener noreferrer">Open in Spotify <span aria-hidden="true">↗</span></a>
+    </dialog>
+    <dialog id="replay-dialog" class="replay-dialog" aria-labelledby="replay-title">
+      <div class="dialog-sparkle" aria-hidden="true">✦</div>
+      <h2 id="replay-title">One more time?</h2>
+      <p>Starting over will take you back to the beginning of your little story.</p>
+      <div class="dialog-actions"><button class="button button-quiet" id="cancel-replay" type="button">Stay here</button><button class="button button-primary" id="confirm-replay" type="button">Let’s go again</button></div>
+    </dialog>
+  </body>
+</html>
